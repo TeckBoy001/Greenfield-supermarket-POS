@@ -1,0 +1,49 @@
+{
+  "name": "meridian-pos",
+  "productName": "Meridian POS",
+  "version": "1.0.0",
+  "description": "Desktop checkout, inventory, payments, payouts and reconciliation platform for medium-sized retail businesses",
+  "main": "electron/main.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "server": "node server/index.js",
+    "server:fresh": "node server/index.js --data ./data-fresh --seed minimal",
+    "test": "node --test --test-concurrency=1 tests/api.test.js",
+    "test:ui": "python3 tests/ui_test.py",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.0.12"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "build": {
+    "appId": "com.meridianpos.desktop",
+    "productName": "Meridian POS",
+    "files": [
+      "electron/**",
+      "server/**",
+      "app/**",
+      "package.json",
+      "!**/*.test.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    }
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^13.0.3"
+  }
+}

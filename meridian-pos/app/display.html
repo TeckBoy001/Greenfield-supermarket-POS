@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer display</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { background: #0d1520; color: #e6edf4; height: 100vh; overflow: hidden; }
+    .cd { display: grid; grid-template-columns: 1.3fr 1fr; height: 100vh; }
+    .cd-items { padding: 28px 32px; overflow: hidden; display: flex; flex-direction: column; }
+    .cd-items h1 { color: #fff; font-size: 26px; margin-bottom: 18px; }
+    .cd-line { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 22px; }
+    .cd-line .q { color: #8fa1b5; margin-right: 10px; font-variant-numeric: tabular-nums; }
+    .cd-line .t { font-variant-numeric: tabular-nums; font-weight: 650; }
+    .cd-side { background: #12342c; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+    .cd-side .row2 { display: flex; justify-content: space-between; font-size: 22px; color: #b9e6d6; font-variant-numeric: tabular-nums; }
+    .cd-total { font-size: 72px; font-weight: 800; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1; }
+    .cd-label { text-transform: uppercase; letter-spacing: .12em; color: #7fe0c3; font-weight: 700; font-size: 15px; }
+    .cd-welcome { display: grid; place-items: center; height: 100vh; text-align: center; }
+    .cd-welcome h1 { font-size: 48px; color: #fff; } .cd-welcome p { color: #8fa1b5; font-size: 22px; }
+    .cd-thanks { font-size: 40px; color: #fff; font-weight: 800; }
+  </style>
+</head>
+<body><div id="cd"></div><script type="module" src="/js/display.js"></script></body>
+</html>
